@@ -1,0 +1,36 @@
+<!DOCTYPE html> 
+<html> 
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Smart Remocon</title> 
+    <link rel="stylesheet" href="/static/css/jquery.mobile-1.4.4.min.css" />
+    <script src="/static/js/jquery-1.11.1.min.js"></script>
+    <script src="/static/js/jquery.mobile-1.4.4.min.js"></script>
+  </head>
+
+  <body>
+
+    <div data-role="page" data-theme="a">
+
+      <div data-role="header">
+        <h1>Status</h1>
+      </div><!-- /header -->
+
+      <div data-role="content">
+        <h2>RESULT: {{ msg }}</h2>
+        <div align="center">
+          {% if msg  == "MESSAGE SENT" %}
+          <img src="/static/images/face-laugh-2.png" alt="emotes">
+          {% else %}
+          <img src="/static/images/face-tired.png" alt="emotes">
+          {% end %}
+        </div>
+      </div><!-- /content -->
+
+    </div><!-- /page -->
+
+  </body>
+
+</html>
+

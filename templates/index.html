@@ -1,0 +1,75 @@
+<!DOCTYPE html> 
+<html> 
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Smart Remocon</title> 
+    <link rel="stylesheet" href="/static/css/jquery.mobile-1.4.4.min.css" />
+    <script src="/static/js/jquery-1.11.1.min.js"></script>
+    <script src="/static/js/jquery.mobile-1.4.4.min.js"></script>
+  </head> 
+
+  <body> 
+
+    <div data-role="page" data-theme="a">
+
+      <div data-role="header">
+        <h1>Remote IR</h1>
+      </div>
+  
+      <div data-role="content">
+        <ul data-role="listview" data-inset="true" data-theme="a" data-dividertheme="a">
+          <li data-role="list-divider">Remote Devices</li>
+          {% for index, key in enumerate(devices) %}
+          <li><a href="#dev-{{index}}" data-transition="slide">{{escape(key)}}</a></li>
+          {% end %}
+        </ul>
+      </div>
+
+      <div data-role="content">
+        <ul data-role="listview" data-inset="true" data-theme="a" data-dividertheme="a">
+          <li data-role="list-divider">System</li>
+          <li><a href="/remocon/system/history" data-transition="slide">History</a></li>
+          <li><a href="/remocon/system/logout" data-transition="slide">Logout</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+
+    {% for index, key in enumerate(devices) %}
+    <div id="dev-{{index}}" data-role="page" data-theme="a">
+
+      <div data-role="header">
+        <h1>Remote Control</h1>
+      </div><!-- /header -->
+
+      <div data-role="content">
+      
+        <h2>DEVICE: {{escape(key)}}</h2>
+
+        <form action="/remocon/request" method="post">
+          <input type="hidden" name="device" value="{{key}}" />
+          <fieldset>
+            <div data-role="fieldcontain">
+              <label for="command" class="select">Switch:</label>
+              <select name="command" id="command">
+                {% for command in devices[key] %}
+                <option value="{{escape(command)}}">{{escape(command)}}</option>
+                {% end %}
+              </select>
+            </div>
+          
+            <button type="submit" data-theme="b">GO!</button>
+          </fieldset>
+        </form>
+
+      </div><!-- /content -->
+
+    </div><!-- /page -->
+    {% end %}
+
+  </body>
+
+</html>
+

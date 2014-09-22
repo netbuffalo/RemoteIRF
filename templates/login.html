@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html>
+
+  <head>
+    <meta name="viewport" content="width=320; user-scalable=no" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <title>Smart Remocon</title>
+    <link rel="stylesheet" href="/static/css/jquery.mobile-1.4.4.min.css" />
+    <script src="/static/js/jquery-1.11.1.min.js"></script>
+    <script src="/static/js/jquery.mobile-1.4.4.min.js"></script>
+  </head>
+
+  <body>
+    
+    <div id="loginPage" data-role="page">
+
+      <div data-role="header">
+        <h1>Login</h1>
+      </div>
+
+    <div data-role="content">
+      <h2>{{escape(message)}}</h2>
+
+      <form data-ajax="false" action="/remocon/login" method="post">
+        <div data-role="fieldcontain" class="ui-hide-label">
+          <label for="username">Username:</label>
+          <input type="text" name="username" id="username" value="" placeholder="Username" />
+        </div>
+
+        <div data-role="fieldcontain" class="ui-hide-label">
+          <label for="password">Password:</label>
+          <input type="password" name="password" id="password" value="" placeholder="Password" />
+        </div>
+
+        <button type="submit" data-theme="b">GO!</button>
+
+      </form>        
+    </div>
+
+  </body>
+</html>
