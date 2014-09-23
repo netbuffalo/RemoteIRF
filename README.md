@@ -7,7 +7,7 @@ IR remocon WebAPI & UI
 1. Install Python(>2.7) tornado:
 
         $ easy_install pip
-        $ pip intall tornado
+        $ pip install tornado
 
 2. Start web server:
 
