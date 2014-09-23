@@ -20,7 +20,7 @@ IR remocon WebAPI & UI
 
    Default username, password: admin, password
 
-4. Follow the guidelines to understand application.
+4. Follow the guidelines to use application.
 
     * [netbuffalo's blog](http://netbuffalo.doorblog.jp/)
 
