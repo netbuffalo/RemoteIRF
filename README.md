@@ -18,8 +18,7 @@ IR remocon WebAPI & UI
 
 3. Using a browser, go to `http://localhost:8888/remocon/login` and you'll see login page.
 
-   Default username - admin
-   Default password - password
+   Default username, password: admin, password
 
 4. Follow the guidelines to understand application.
 
