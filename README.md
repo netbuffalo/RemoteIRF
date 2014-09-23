@@ -6,19 +6,20 @@ IR remocon WebAPI & UI
 
 1. Install Python(>2.7) tornado:
 
-        easy_install pip
-        pip intall tornado
+        $ easy_install pip
+        $ pip intall tornado
 
 2. Start web server:
 
-        python server.py
+        $ python server.py
 
    Run with `--help` or `-h` for options
 
 
 3. Using a browser, go to `http://localhost:8888/remocon/login` and you'll see login page.
 
-   Default username, password: admin, password
+   Default username: admin
+   Default username: password
 
 4. Follow the guidelines to understand application.
 
