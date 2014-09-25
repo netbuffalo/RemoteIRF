@@ -25,6 +25,7 @@ IR remocon WebAPI & UI
 4. Follow the guidelines to use application.
 
     * [netbuffalo's blog](http://netbuffalo.doorblog.jp/)
+    * [RemoteIRE](https://github.com/netbuffalo/RemoteIRE)
 
 
 ## License
