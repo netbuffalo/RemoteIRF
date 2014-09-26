@@ -7,16 +7,16 @@ IR remocon WebAPI & UI
 
 ## Screenshot
 
-Login:
+1. Login
 ![RemoteIR Frontend login page](./images/login.png)
 
-Remocon:
+2. Remocon
 ![RemoteIR Frontend remocon menu](./images/remocon.png)
 
-Status:
+3. Status
 ![RemoteIR Frontend status view](./images/status.png)
 
-History:
+4. History
 ![RemoteIR Frontend history view](./images/history.png)
 
 
