@@ -7,8 +7,8 @@ IR remocon WebAPI & UI
 
 ## Screenshots
 
-1. Login<br>
-<div style="text-align:center"><img src ="./images/login.png" /></div>
+1. Login
+<div align="center"><img src ="./images/login.png" /></div>
 
 <br>2. Remocon<br>
 ![RemoteIR Frontend remocon menu](./images/remocon.png)
