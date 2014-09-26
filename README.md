@@ -17,6 +17,15 @@ IR remocon WebAPI & UI
 
    Run with `--help` or `-h` for options
 
+        $ python server.py -h
+        usage: server.py [-h] [-p PORT] [-user USERNAME] [-passwd PASSWORD]
+        remote IR WebAPI & UI
+
+        optional arguments:
+          -h, --help                          show this help message and exit
+          -p PORT, --port PORT                port number
+          -user USERNAME, --user USERNAME     login username
+          -passwd PASSWORD, --passwd PASSWORD login password
 
 3. Using a browser, go to `http://localhost:8888/remocon/login` and you'll see login page.
 
@@ -24,7 +33,7 @@ IR remocon WebAPI & UI
 
 4. Follow the guidelines to use application.
 
-    * [netbuffalo's blog](http://netbuffalo.doorblog.jp/)
+    * [netbuffalo's blog](http://netbuffalo.doorblog.jp/archives/4873455.html)
     * [RemoteIRE](https://github.com/netbuffalo/RemoteIRE)
 
 

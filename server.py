@@ -262,8 +262,8 @@ if __name__ == "__main__":
   # parse options
   parser = argparse.ArgumentParser(description='remote IR WebAPI & UI')
   parser.add_argument('-p', '--port', action="store", dest="port", help="port number", default=8888)
-  parser.add_argument('-user', '--user', action="store", dest="username", help="port number", default="admin")
-  parser.add_argument('-passwd', '--passwd', action="store", dest="password", help="port number", default="password")
+  parser.add_argument('-user', '--user', action="store", dest="username", help="login username", default="admin")
+  parser.add_argument('-passwd', '--passwd', action="store", dest="password", help="login password", default="password")
   args = parser.parse_args()
 
   # signal trap
