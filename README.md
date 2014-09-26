@@ -5,18 +5,18 @@ IR remocon WebAPI & UI
 ![ overview ](./images/overview.png "overview")
 
 
-## Screenshot
+## Screenshots
 
 1. Login<br>
 ![RemoteIR Frontend login page](./images/login.png)
 
-2. Remocon
+<br>2. Remocon<br>
 ![RemoteIR Frontend remocon menu](./images/remocon.png)
 
-3. Status
+<br>3. Status<br>
 ![RemoteIR Frontend status view](./images/status.png)
 
-4. History
+<br>4. History<br>
 ![RemoteIR Frontend history view](./images/history.png)
 
 
