@@ -7,7 +7,7 @@ IR remocon WebAPI & UI
 
 ## Screenshot
 
-1. Login
+1. Login<br>
 ![RemoteIR Frontend login page](./images/login.png)
 
 2. Remocon
