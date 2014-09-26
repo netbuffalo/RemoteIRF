@@ -2,23 +2,21 @@
 
 IR remocon WebAPI & UI
 
-![ overview ](./images/overview.png "overview")
-
+<div align="center"><img src="./images/overview.png" /></div>
 
 ## Screenshots
 
 1. Login
-<div align="center"><img src ="./images/login.png" /></div>
+<div align="center"><img src="./images/login.png" /></div>
 
-<br>2. Remocon<br>
-![RemoteIR Frontend remocon menu](./images/remocon.png)
+2. Remocon
+<div align="center"><img src="./images/remocon.png" /></div>
 
-<br>3. Status<br>
-![RemoteIR Frontend status view](./images/status.png)
+3. Status
+<div align="center"><img src="./images/status.png" /></div>
 
-<br>4. History<br>
-![RemoteIR Frontend history view](./images/history.png)
-
+4. History
+<div align="center"><img src="./images/history.png" /></div>
 
 ## Getting Started
 
