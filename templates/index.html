@@ -28,6 +28,14 @@
 
       <div data-role="content">
         <ul data-role="listview" data-inset="true" data-theme="a" data-dividertheme="a">
+          <li data-role="list-divider">Remote Temperature</li>
+          <li>{{escape(temp)}}&nbsp;&#176;C</li>
+          <li><a href="/remocon/system/temperature_history" data-transition="slide">Trend</a></li>
+        </ul>
+      </div>
+
+      <div data-role="content">
+        <ul data-role="listview" data-inset="true" data-theme="a" data-dividertheme="a">
           <li data-role="list-divider">System</li>
           <li><a href="/remocon/system/history" data-transition="slide">History</a></li>
           <li><a href="/remocon/system/logout" data-transition="slide">Logout</a></li>

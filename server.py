@@ -43,10 +43,13 @@ static_path = os.path.join(here, "static")
 
 dev2commands = OrderedDict()
 irRequest = None
-histries = []
+histories = []
 cookie_username = "user"
 username = "admin"
 password = "password"
+
+current_temp = None
+temperature_histories = []
 
 is_shutdown = False
 
@@ -91,11 +94,16 @@ class SystemHandler(BaseHandler):
 
   @tornado.web.authenticated
   def get(self, oper = None):
-    global histries
+    global histories
     global cookie_username
+
     if oper and oper == "history":
       logger.info("rendering history page...")
-      return self.write(self.loader.load("history.html").generate(histries=histries))
+      return self.write(self.loader.load("history.html").generate(histories=histories))
+    elif oper and oper == "temperature_history":
+      logger.info("rendering temperature history page...")
+      return self.write(self.loader.load("temperature_history.html").generate(histories=temperature_histories))
+
     if oper and oper == "logout":
       logger.info("logged out.")
       self.clear_cookie(cookie_username)
@@ -106,13 +114,13 @@ class SystemHandler(BaseHandler):
   def post(self, oper = None):
     global irRequest
     logger.info("receiving history...")
-    global histries
+    global histories
     if "Content-Type" in self.request.headers and self.request.headers['Content-Type'] == "application/json":
       if oper and oper == "history":
         history = tornado.escape.json_decode(self.request.body)
-        if len(histries) >= 50:
-          histries.pop(0)
-        histries.append(history)
+        if len(histories) >= 50:
+          histories.pop(0)
+        histories.append(history)
       else:
         raise tornado.web.HTTPError(400)
     else:
@@ -125,7 +133,8 @@ class TopHandler(BaseHandler):
 
   @tornado.web.authenticated
   def get(self):
-    self.write(self.loader.load("index.html").generate(devices = dev2commands))
+    disp_temp = current_temp if current_temp != None else "-"
+    self.write(self.loader.load("index.html").generate(devices = dev2commands, temp = disp_temp))
 
 
 class PutWorker(threading.Thread):
@@ -221,6 +230,7 @@ class IrRequestHandler(tornado.web.RequestHandler):
 class DeviceHandler(tornado.web.RequestHandler):
   def post(self, oper = None):
     global dev2commands
+    global current_temp
     if "Content-Type" in self.request.headers and self.request.headers['Content-Type'] == "application/json":
       if oper and oper == "init":
         logger.info("initializing device entries...")
@@ -230,6 +240,18 @@ class DeviceHandler(tornado.web.RequestHandler):
         device = data['device']
         commands = data['commands']
         dev2commands[device] = commands
+      elif oper and oper == "notify":
+        notify = tornado.escape.json_decode(self.request.body)
+        if notify['type'] == 'temperature':
+          current_temp = notify['value'] 
+          notify['diff'] = 0
+          if len(temperature_histories) > 0:
+              before_temp = temperature_histories[len(temperature_histories) - 1]['value']
+              diff = float(current_temp) - float(before_temp)
+              notify['diff'] = diff
+          if len(temperature_histories) >= 288:
+            temperature_histories.pop(0)
+          temperature_histories.append(notify)
     else:
       raise tornado.web.HTTPError(400)
 
